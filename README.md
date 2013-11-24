@@ -1,3 +1,13 @@
+## Quick start
+
++ _breakpoints.scss is where to define all width/height-based media queries, and choose which get shown to legacy browsers (IE8 and below)
++ use one SCSS file for each block, or module, or logical type of element (e.g. banner, forms, buttons, image-with-caption)
++ within those files, use '@media #{$breakpoint}' blocks to restrict styles to certain media queried conditions, as defined before. No more _mobile.scss.
+
+That's how to use the SCSS structure in its current form.
+
+## Outline
+
 I have an idea for a neat way to organise SASS files, in a modular approach, for a responsive forward-thinking and backwards-compatible site.
 
 I'm going to flesh out the method here, before using it for a web project. This repo will host a set of reusable boilerplate code, written with some opinionated design (not as in *visual* design) decisions.
