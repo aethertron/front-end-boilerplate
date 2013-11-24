@@ -1,0 +1,25 @@
+<p>I have an idea for a neat way to organise SASS files, in a modular approach, for a responsive forward-thinking and backwards-compatible site.</p>
+<p>I&#39;m going to flesh out the method here, before using it for a web project. This repo will host a set of reusable boilerplate code, written with some opinionated design (not as in <em>visual</em> design) decisions.</p>
+<h2>Objectives</h2>
+<ul>
+<li>Sensible organisation of stylesheets into SASS partials</li>
+<li>Responsive/adaptive page layouts</li>
+<li>... but supports IE back to version 8 (the last IE not to support media queries on viewport width)</li>
+<li>Basic boilerplate JavaScript written in a convenient pattern</li>
+</ul>
+<h2>SASS partial structure</h2>
+<p>This is the main thing. I want to be able to have files like _header.scss and _accordion.scss. These will contain all the code for these respective components, including all the various media query-based alterations. So there won&#39;t be anything like _mobile.scss.</p>
+<p>I&#39;ve previously used an approach that involves _desktop.scss and _tablet.scss files, and so on. This was appealing for two reasons:</p>
+<ul>
+<li>It mirrored one method used to organise media queries using plain css: having desktop stuff all in one section, then opening up one media query block for all the mobile code, etc.</li>
+<li>It lets you put the desktop stuff into a media query, so you don&#39;t have to override it for the mobile layout.</li>
+<li>... but we could still support IE8, by generating a separate stylesheet, one that imported just the desktop and universal code, without any media queries. This is delivered with a <a href="http://www.quirksmode.org/css/condcom.html">conditional comment</a>.</li>
+</ul>
+<p>I want to keep the last two advantages, but I want to keep all code for given components close together.</p>
+<h3>Other (S)CSS considerations</h3>
+<p>It&#39;ll include <a href="http://necolas.github.io/normalize.css/">Normalize</a> and the <a href="http://semantic.gs/">Semantic Grid System</a>. These have proved invaluable.</p>
+<h2>Markup</h2>
+<p>I&#39;ll use HTML5 sectioning elements, but always wrapped in divs. Never styled directly, so it doesn&#39;t matter that IE8 can&#39;t render them. I know about <a href="https://github.com/aFarkas/html5shiv">HTML5 shiv</a>, using JS to get these elements to render in old browsers. But I don&#39;t want to use that. I want to minimise reliance on JS for styling, and avoid repeated overburdening of weaker browsers, which are probably installed on weaker computers.</p>
+<h2>JavaScript</h2>
+<p>The <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript">module pattern</a> has served me well, so I&#39;ll use this. To keep things organised and namespaced. And use strict mode.</p>
+<p>jQuery is the default library.</p>

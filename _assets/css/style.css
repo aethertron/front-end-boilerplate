@@ -1,0 +1,62 @@
+html {
+  font-family: georgia;
+  color: #444;
+}
+
+@media only screen and (min-width: 481px) {
+  html {
+    min-width: 400px;
+  }
+
+  .page {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 960px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  html {
+    font-size: 120%;
+  }
+}
+.header {
+  margin: 2em;
+  border: solid 1px #ddd;
+  padding: 2em;
+}
+
+.main-nav {
+  padding: 0;
+}
+.main-nav li {
+  list-style: none;
+}
+.main-nav a {
+  text-decoration: none;
+}
+.main-nav a:hover, .main-nav a:focus {
+  background: #dde;
+}
+
+@media only screen and (min-width: 481px) {
+  .main-nav {
+    text-align: center;
+  }
+  .main-nav li {
+    display: inline;
+    margin: 0 2em 0 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .main-nav {
+    margin: 10px;
+    border: solid 1px #ccc;
+  }
+  .main-nav li {
+    display: block;
+  }
+  .main-nav a {
+    display: block;
+    padding: 0 40px;
+  }
+}

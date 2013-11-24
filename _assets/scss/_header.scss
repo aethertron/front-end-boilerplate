@@ -1,0 +1,46 @@
+.header {
+  margin: 2em;
+  border: solid 1px #ddd;
+  padding: 2em;
+}
+
+.main-nav {
+  padding: 0;
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    &:hover, &:focus {
+      background: #dde;
+    }
+  }
+}
+
+@media #{$bp_desktop} {
+
+.main-nav {
+  text-align: center;
+  li {
+    display: inline;
+    margin: 0 2em 0 0;
+  }
+}
+
+}
+
+@media #{$bp_mobile_tablet} {
+
+.main-nav {
+  margin: 10px;
+  border: solid 1px #ccc;
+  li {
+    display: block;
+  }
+  a {
+    display: block;
+    padding: 0 40px;
+  }
+}
+
+}

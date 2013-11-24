@@ -1,0 +1,23 @@
+html {
+  font-family: georgia;
+  color: #444;
+}
+
+@media #{$bp_desktop} {
+
+.page {
+  min-width: 480px;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+}
+
+@media #{$bp_mobile} {
+
+html {
+  font-size: 120%;
+}
+
+}

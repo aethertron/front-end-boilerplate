@@ -1,0 +1,30 @@
+doctype 5
+html(lang="en")
+  head
+    title Example HTML page
+    | 
+    | <!--[if gte IE 9]><!-->
+    link(rel='stylesheet', href='/_assets/css/style.css')
+    | <!--<![endif]-->
+    | <!--[if lt IE 9]>
+    link(rel='stylesheet', href='/_assets/css/style-legacy.css')
+    | <![endif]-->
+  body
+    .page
+      header.site-header
+        h1 Example HTML page
+        h2 Cohesive Responsive Architecture for Preprocessors
+        ul.main-nav
+          li
+            a(href='#') Home
+          li
+            a(href='#') About
+          li
+            a(href='#') News
+          li
+            a(href='#') Contact
+      .site-main
+        p Welcome to a better structure.
+      footer.site-footer
+        p
+          small 2013 | Some rights reserved
