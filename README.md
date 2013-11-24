@@ -6,6 +6,19 @@
 
 That's how to use the SCSS structure in its current form.
 
+### Advantages over other approaches
+
++ No need to use CSS comments to label sections of code for different blocks. Now the label is the filename.
++ Desktop-only styles need not stomp over mobile styles, but still can be accessible to legacy IE
+  + This is shared with a different approach that uses _desktop.scss, mobile.scss, etc.
+
+### Disadvantages over alternatives
+
++ Legacy IE still gets all the irrelevant mobile code, but made inert by being wrapped in media queries that the browser will never activate. Using separate mobile files means you can just avoid importing those in to the legacy stylesheet, lightening the load.
+  + But perhaps this is fixable by using @if statements. I'll see if this is workable without uglying up the code.
++ Outputted code gets lots of duplicated media query declarations - heavier load.
+  + gzipping the file would mitigate this. I think.
+
 ## Outline
 
 I have an idea for a neat way to organise SASS files, in a modular approach, for a responsive forward-thinking and backwards-compatible site.
