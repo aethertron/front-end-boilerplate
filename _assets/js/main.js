@@ -1,7 +1,16 @@
 (function () {
+  "use strict";
   var app = {
+    
+    colourPalette: function() {
+      $('.palette li').each(function(i, e) {
+        var colourValue = $(e).text();
+        $(e).prepend('<span class="palette-sample" style="background:' + colourValue + 
+        '"></span>')
+      });
+    },
     init: function () {
-      console.log('We\'re initialised.');
+      app.colourPalette();
     }
   }
   app.init();

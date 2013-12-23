@@ -545,3 +545,22 @@ html {
     clear: both;
   }
 }
+.palette {
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+.palette li {
+  display: inline-block;
+  min-width: 64px;
+  margin: 0 10px 10px 0;
+  border: solid 2px black;
+  text-align: center;
+}
+
+.palette-sample {
+  display: block;
+  width: auto;
+  height: 32px;
+  border-bottom: solid 2px black;
+}
