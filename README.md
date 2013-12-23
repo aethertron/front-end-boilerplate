@@ -10,7 +10,7 @@ That's how to use the SCSS structure in its current form.
 
 + No need to use CSS comments to label sections of code for different blocks. Now the label is the filename.
 + Desktop-only styles need not stomp over mobile styles, but still can be accessible to legacy IE
-  + This is shared with a different approach that uses _desktop.scss, mobile.scss, etc.
+  + This is shared with a different approach that uses _desktop.scss, _mobile.scss, etc.
 
 ### Disadvantages over alternatives
 
@@ -23,7 +23,7 @@ That's how to use the SCSS structure in its current form.
 
 I have an idea for a neat way to organise SASS files, in a modular approach, for a responsive forward-thinking and backwards-compatible site.
 
-I'm going to flesh out the method here, before using it for a web project. This repo will host a set of reusable boilerplate code, written with some opinionated design (not as in *visual* design) decisions.
+I'm going to flesh out the method here, before using it for a web project. This repo will host a set of reusable boilerplate code, written with some opinionated structural decisions.
 
 ## Objectives
 

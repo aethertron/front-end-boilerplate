@@ -36,12 +36,13 @@
 @media #{$bp_mobile_tablet} {
 
 .main-nav {
-@include row;
+  @include row;
   li {
     display: block;
   }
   a {
     display: block;
+    padding: 5px;
   }
 }
 

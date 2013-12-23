@@ -393,6 +393,10 @@ body:after {
     background: #fffcc5;
   }
 
+  .page {
+    min-width: 641px;
+  }
+
   .wrap {
     margin: 0 auto;
     width: 90%;
@@ -493,6 +497,7 @@ html {
   }
   .main-nav a {
     display: block;
+    padding: 5px;
   }
 }
 @media only screen and (min-width: 960px) {

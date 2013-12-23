@@ -1,5 +1,9 @@
 doctype 5
-html(lang="en")
+| <!--[if gte IE 9]><!-->
+html(lang="en", class="no-js newer")
+  | <!--<![endif]--><!--[if lt IE 9]>
+html(lang="en", class="no-js legacy")
+  | <![endif]-->
   head
     title Example HTML page
     | 
@@ -9,6 +13,8 @@ html(lang="en")
     | <!--[if lt IE 9]>
     link(rel='stylesheet', href='/_assets/css/style-legacy.css')
     | <![endif]-->
+    //- http://www.paulirish.com/2009/avoiding-the-fouc-v3/
+    script (function () {var d=document.documentElement; d.className=d.className.replace(/\bno-js\b/,'js'); })();
   body
     .page
       header.site-header
@@ -42,3 +48,4 @@ html(lang="en")
         .wrap
           p
             small 2013 | Some rights reserved
+    script(src="_assets/js/main.js")
