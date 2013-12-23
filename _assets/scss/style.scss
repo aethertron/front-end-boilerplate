@@ -1,4 +1,2 @@
-@import "breakpoints";
-
-
-@import "typography", "header";
+$isLegacyMode: false;
+@import "imports";

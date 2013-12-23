@@ -1,0 +1,45 @@
+// Whole-page layout styling
+
+html {
+
+}
+
+@media #{$bp_desktop} {
+html {
+  background: #fffcc5;
+}
+.wrap {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 960px;
+}
+
+}
+
+@media #{$bp_supersize} {
+html {
+  background: #D5FFEB;
+}
+.wrap {
+  max-width: 1080px;
+}
+
+}
+
+@media #{$bp_mobile_tablet} {
+  .wrap {
+    @include column(12);
+  }
+
+}
+
+@media #{$bp_tablet} {
+  html {
+    background: #ffd9c3;
+  }
+}
+@media #{$bp_mobile} {
+  html {
+    background: #ffb1c2;
+  }
+}

@@ -1,18 +1,22 @@
-.header {
-  margin: 2em;
-  border: solid 1px #ddd;
-  padding: 2em;
+.site-header {
+  border-bottom: solid 1px rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.25);
+  @include clearfix;
 }
 
-.main-nav {
-  padding: 0;
-  li {
-    list-style: none;
+.masthead {
+  h1, h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
-  a {
-    text-decoration: none;
+}
+
+.main-nav ul {
+  padding: 0;
+  margin: 0;
+  a { background: rgba(255,255,255,0.2);
     &:hover, &:focus {
-      background: #dde;
+      background: rgba(255,255,255,0.5);
     }
   }
 }
@@ -23,7 +27,7 @@
   text-align: center;
   li {
     display: inline;
-    margin: 0 2em 0 0;
+    margin: 0 20px 0 0;
   }
 }
 
@@ -32,15 +36,34 @@
 @media #{$bp_mobile_tablet} {
 
 .main-nav {
-  margin: 10px;
-  border: solid 1px #ccc;
+@include row;
   li {
     display: block;
   }
   a {
     display: block;
-    padding: 0 40px;
   }
 }
 
+}
+
+@media #{$bp_supersize} {
+  .masthead {
+    @include column(8);
+    h1, h2 {
+      @include row(8);
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  .main-nav {
+    @include column(4);
+    margin-top: 20px;
+    ul {
+      @include row(4);
+      text-align: right;
+    }
+    li {
+    }
+  }
 }
