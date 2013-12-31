@@ -6,7 +6,7 @@
 
 That's how to use the SCSS structure in its current form.
 
-The Guardian's team has come up with a [different approach](http://www.theguardian.com/info/developer-blog/2013/oct/14/mobile-first-responsive-ie8) which may be worth examining and comparing. They use mixins nested within style declarations to specify media query dimensions.
+The Guardian's team has come up with a [different approach](http://www.theguardian.com/info/developer-blog/2013/oct/14/mobile-first-responsive-ie8) which may be worth examining and comparing. They use mixins nested within rules limit certain declarations to particular pre-defined breakpoints.
 
 ### Advantages over other approaches
 
