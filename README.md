@@ -18,6 +18,7 @@ The Guardian's team has come up with a [different approach](http://www.theguardi
 
 + Legacy IE still gets all the irrelevant mobile code, but made inert by being wrapped in media queries that the browser will never activate. Using separate mobile files means you can just avoid importing those in to the legacy stylesheet, lightening the load.
   + But perhaps this is fixable by using @if statements. I'll see if this is workable without uglying up the code.
+  + The [Guardian's approach](http://www.theguardian.com/info/developer-blog/2013/oct/14/mobile-first-responsive-ie8) solves this issue
 + Outputted code gets lots of duplicated media query declarations - heavier load.
   + gzipping the file would mitigate this. I think.
 
