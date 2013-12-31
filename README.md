@@ -6,6 +6,8 @@
 
 That's how to use the SCSS structure in its current form.
 
+The Guardian's team has come up with a [different approach](http://www.theguardian.com/info/developer-blog/2013/oct/14/mobile-first-responsive-ie8) which may be worth examining and comparing. They use mixins nested within style declarations to specify media query dimensions.
+
 ### Advantages over other approaches
 
 + No need to use CSS comments to label sections of code for different blocks. Now the label is the filename.
@@ -47,6 +49,8 @@ I want to keep the last two advantages, but I want to keep all code for given co
 ### Other (S)CSS considerations
 
 It'll include [Normalize](http://necolas.github.io/normalize.css/) and the [Semantic Grid System](http://semantic.gs/). These have proved invaluable.
+
+This uses [autoprefixer](https://github.com/ai/autoprefixer) instead of SASS/Compass for CSS3 vendor prefixing. [Prepros](http://alphapixels.com/prepros/) can handle this.
 
 ## Markup
 

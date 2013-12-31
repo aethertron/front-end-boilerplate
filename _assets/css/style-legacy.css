@@ -656,51 +656,16 @@ html {
   width: 200px;
   height: 200px;
   overflow: hidden;
-  border: solid 2px black;
+  border: solid 1px black;
   position: relative;
-}
-
-.spotlight:hover .spotlight-image {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-.spotlight:hover .spotlight-image img {
-  opacity: 0.7;
 }
 
 .spotlight:hover .spotlight-text {
   top: 20px;
-  background-color: #fffcc5;
-}
-
-.spotlight:hover .spotlight-text {
-  -webkit-transform: skew(0, 2deg);
-  -ms-transform: skew(0, 2deg);
-  transform: skew(0, 2deg);
-}
-
-.spotlight:hover .spotlight-text-inner {
-  -webkit-transform: skew(0, -2deg);
-  -ms-transform: skew(0, -2deg);
-  transform: skew(0, -2deg);
 }
 
 .spotlight:hover .spotlight-detail {
-  opacity: 1;
   display: block;
-}
-
-.spotlight-image {
-  background: orange;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.spotlight-image img {
-  -webkit-transition: .4s;
-  transition: .4s;
 }
 
 .spotlight-text {
@@ -709,29 +674,14 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   background: #fff;
-  border-top: solid 2px black;
+  border-top: solid 1px black;
   padding: 0 20px 10px;
   position: absolute;
   top: 70%;
   bottom: -10px;
-  -webkit-transition: .4s;
-  transition: .4s;
-  -webkit-transform: skew(0, -2deg);
-  -ms-transform: skew(0, -2deg);
-  transform: skew(0, -2deg);
-}
-
-.spotlight-text-inner {
-  -webkit-transform: skew(0, 2deg);
-  -ms-transform: skew(0, 2deg);
-  transform: skew(0, 2deg);
-  -webkit-transition: .4s;
-  transition: .4s;
 }
 
 .spotlight-detail {
-  -webkit-transition: .4s;
-  transition: .4s;
   overflow: hidden;
 }
 

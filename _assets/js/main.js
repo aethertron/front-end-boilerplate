@@ -1,6 +1,10 @@
 (function ($) {
   "use strict";
   var app = {
+    shapes: function() {
+    
+    
+    },
     initSpotlight: function() {
       // (depends on data-hrefs plugin)
       $('.spotlight').each(function(i, e) {
@@ -19,6 +23,7 @@
       app.drawColourPalette();
       // initialises data-hrefs plugin
       sethrefs();
+      app.shapes();
     }
   }
   app.init();
