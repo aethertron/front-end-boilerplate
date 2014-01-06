@@ -1,48 +1,35 @@
 // Whole-page layout styling
 
 html {
-
-}
-
-@media #{$bp_desktop} {
-html {
-  background: #fffcc5;
-}
-.page {
-  min-width: 641px;
-}
-.wrap {
-  margin: 0 auto;
-  width: 90%;
-  max-width: 960px;
-}
-
-}
-
-@media #{$bp_supersize} {
-html {
-  background: #D5FFEB;
-}
-.wrap {
-  max-width: 1080px;
-}
-
-}
-
-@media #{$bp_mobile_tablet} {
-  .wrap {
-    @include column(12);
-  }
-
-}
-
-@media #{$bp_tablet} {
-  html {
-    background: #ffd9c3;
-  }
-}
-@media #{$bp_mobile} {
-  html {
+  @include mq($to: tablet) {
     background: #ffb1c2;
   }
+  @include mq($from: tablet) {
+    background: #ffd9c3;
+  }
+  @include mq($from: desktop) {
+    background: #fffcc5;
+  }
+  @include mq($from: supersize) {
+    background: #D5FFEB;
+  }
 }
+.page {
+  @include mq(desktop) {
+    min-width: 641px;
+  }
+}
+.wrap {
+  @include mq(desktop) {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 960px;
+  }
+  @include mq(supersize) {
+    max-width: 1080px;
+  }
+  @include mq($to: desktop) {
+    @include column(12);
+  }
+}
+

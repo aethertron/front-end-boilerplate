@@ -9,47 +9,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
   }
-}
-
-.main-nav ul {
-  padding: 0;
-  margin: 0;
-  a { background: rgba(255,255,255,0.2);
-    &:hover, &:focus {
-      background: rgba(255,255,255,0.5);
-    }
-  }
-}
-
-@media #{$bp_desktop} {
-
-.main-nav {
-  text-align: right;
-  li {
-    display: inline;
-    margin: 0 20px 0 0;
-  }
-}
-
-}
-
-@media #{$bp_mobile_tablet} {
-
-.main-nav {
-  @include row;
-  li {
-    display: block;
-  }
-  a {
-    display: block;
-    padding: 5px;
-  }
-}
-
-}
-
-@media #{$bp_supersize} {
-  .masthead {
+  @include mq($from: supersize) {
     @include column(8);
     h1, h2 {
       @include row(8);
@@ -57,14 +17,42 @@
       margin-bottom: 10px;
     }
   }
-  .main-nav {
+}
+
+.main-nav {
+  ul {
+    padding: 0;
+    margin: 0;
+    a { background: rgba(255,255,255,0.2);
+      &:hover, &:focus {
+        background: rgba(255,255,255,0.5);
+      }
+    }
+  }
+  @include mq($from: desktop) {
+    text-align: right;
+    li {
+      display: inline;
+      margin: 0 20px 0 0;
+    }
+  }
+  @include mq($to: desktop) {
+    @include row;
+    li {
+      display: block;
+    }
+    a {
+      display: block;
+      padding: 5px;
+    }
+  }
+  @include mq($from: supersize) {
     @include column(4);
     margin-top: 20px;
     ul {
       @include row(4);
       text-align: right;
     }
-    li {
-    }
   }
 }
+

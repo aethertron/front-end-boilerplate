@@ -1,21 +1,7 @@
 html {
   font: 16px/24px calibri, sans-serif;
   color: #444;
-}
-
-@media #{$bp_desktop} {
-
-
-}
-
-@media #{$bp_supersize} {
-html {
-  font-size: 18px;
-}
-
-}
-
-@media #{$bp_mobile_tablet} {
-
-
+  @include mq($from: supersize) {
+    font-size: 18px;
+  }
 }
