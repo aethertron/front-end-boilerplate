@@ -1,26 +1,6 @@
-## Quick start
+## This uses the Guardian's mq now
 
-+ _breakpoints.scss is where to define all width/height-based media queries, and choose which get shown to legacy browsers (IE8 and below)
-+ use one SCSS file for each block, or module, or logical type of element (e.g. banner, forms, buttons, image-with-caption)
-+ within those files, use '@media #{$breakpoint}' blocks to restrict styles to certain media queried conditions, as defined before. No more _mobile.scss.
-
-That's how to use the SCSS structure in its current form.
-
-The Guardian's team has come up with a [different approach](http://www.theguardian.com/info/developer-blog/2013/oct/14/mobile-first-responsive-ie8) which may be worth examining and comparing. They use mixins nested within rules limit certain declarations to particular pre-defined breakpoints.
-
-### Advantages over other approaches
-
-+ No need to use CSS comments to label sections of code for different blocks. Now the label is the filename.
-+ Desktop-only styles need not stomp over mobile styles, but still can be accessible to legacy IE
-  + This is shared with a different approach that uses _desktop.scss, _mobile.scss, etc.
-
-### Disadvantages over alternatives
-
-+ Legacy IE still gets all the irrelevant mobile code, but made inert by being wrapped in media queries that the browser will never activate. Using separate mobile files means you can just avoid importing those in to the legacy stylesheet, lightening the load.
-  + But perhaps this is fixable by using @if statements. I'll see if this is workable without uglying up the code.
-  + The [Guardian's approach](http://www.theguardian.com/info/developer-blog/2013/oct/14/mobile-first-responsive-ie8) solves this issue
-+ Outputted code gets lots of duplicated media query declarations - heavier load.
-  + gzipping the file would mitigate this. I think.
+I've replaced my weird string interpolation-based method for handling breakpoints with [this code](https://github.com/guardian/sass-mq) from the Guardian newspaper. It does everything better than before. The explanation below, under 'Old Method', applies to the old code (which is preserved in _assets/scss/oldversion).
 
 ## Outline
 
@@ -61,4 +41,30 @@ I'll use HTML5 sectioning elements, but always wrapped in divs. Never styled dir
 
 The [module pattern](http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript) has served me well, so I'll use this. To keep things organised and namespaced. And use strict mode.
 
-jQuery is the default library.
+jQuery is the standard DOM and AJAX library.
+
+## Old Method (for SCSS and breakpoints)
+
+I've replaced this functionality with **mq** (see above). But here's how the old version worked:
+
++ _breakpoints.scss is where to define all width/height-based media queries, and choose which get shown to legacy browsers (IE8 and below)
++ use one SCSS file for each block, or module, or logical type of element (e.g. banner, forms, buttons, image-with-caption)
++ within those files, use '@media #{$breakpoint}' blocks to restrict styles to certain media queried conditions, as defined before. No more _mobile.scss.
+
+That's how to use the SCSS structure in its prior form.
+
+The Guardian's team has come up with a [different approach](http://www.theguardian.com/info/developer-blog/2013/oct/14/mobile-first-responsive-ie8) which may be worth examining and comparing. They use mixins nested within rules limit certain declarations to particular pre-defined breakpoints.
+
+### Advantages over other approaches
+
++ No need to use CSS comments to label sections of code for different blocks. Now the label is the filename.
++ Desktop-only styles need not stomp over mobile styles, but still can be accessible to legacy IE
+  + This is shared with a different approach that uses _desktop.scss, _mobile.scss, etc.
+
+### Disadvantages over alternatives
+
++ Legacy IE still gets all the irrelevant mobile code, but made inert by being wrapped in media queries that the browser will never activate. Using separate mobile files means you can just avoid importing those in to the legacy stylesheet, lightening the load.
+  + But perhaps this is fixable by using @if statements. I'll see if this is workable without uglying up the code.
+  + The [Guardian's approach](http://www.theguardian.com/info/developer-blog/2013/oct/14/mobile-first-responsive-ie8) solves this issue
++ Outputted code gets lots of duplicated media query declarations - heavier load.
+  + gzipping the file would mitigate this. I think.
