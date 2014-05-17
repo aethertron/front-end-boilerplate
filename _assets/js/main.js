@@ -7,6 +7,7 @@ var APP;
 (function ($) {
   "use strict";
   APP = (function() {
+    // private members
     function drawColourPalette() {
       $('.palette li').each(function() {
         var colourValue = $(this).text();
@@ -16,6 +17,7 @@ var APP;
     }
 
     return {
+      // public members
       init: function() {
         drawColourPalette();
       }
