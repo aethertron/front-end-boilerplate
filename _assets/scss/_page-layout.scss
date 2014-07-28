@@ -14,22 +14,12 @@ html {
     background: #D5FFEB;
   }
 }
+
 .page {
-  @include mq(desktop) {
-    min-width: 641px;
-  }
+
 }
 .wrap {
-  @include mq(desktop) {
-    margin: 0 auto;
-    width: 90%;
-    max-width: 960px;
-  }
-  @include mq(supersize) {
-    max-width: 1080px;
-  }
-  @include mq($to: desktop) {
-    @include column(12);
-  }
+  margin: 0 auto;
+  width: 90%;
+  max-width: 960px;
 }
-

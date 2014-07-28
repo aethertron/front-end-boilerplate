@@ -1,7 +1,0 @@
-html {
-  font: 16px/24px calibri, sans-serif;
-  color: #444;
-  @include mq($from: supersize) {
-    font-size: 18px;
-  }
-}
