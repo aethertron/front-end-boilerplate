@@ -8,18 +8,12 @@ var APP;
   "use strict";
   APP = (function() {
     // private members
-    function drawColourPalette() {
-      $('.palette li').each(function() {
-        var colourValue = $(this).text();
-        $(this).prepend('<span class="palette-sample" style="background:'
-                + colourValue + '"></span>');
-      });
-    }
+    var n;
+    function fun() {}
 
     return {
       // public members
       init: function() {
-        drawColourPalette();
       }
     };
   }());

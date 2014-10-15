@@ -1,0 +1,50 @@
+doctype html
+include ./_functions.jade
+| <!--[if gte IE 9]><!-->
+html(lang="en", class="no-js newer")
+  | <!--<![endif]--><!--[if lt IE 9]>
+html(lang="en", class="no-js legacy")
+  | <![endif]-->
+  head
+    title Example HTML page
+    | 
+    | <!--[if gte IE 9]><!-->
+    link(rel='stylesheet', href='/_assets/css/style.css')
+    | <!--<![endif]-->
+    | <!--[if lt IE 9]>
+    link(rel='stylesheet', href='/_assets/css/style-legacy.css')
+    | <![endif]-->
+    //- http://www.paulirish.com/2009/avoiding-the-fouc-v3/
+    script (function () {var d=document.documentElement; d.className=d.className.replace(/\bno-js\b/,'js'); })();
+  body
+    .page
+      header.site-header
+        .wrap
+          .masthead
+            h1 Example HTML page
+            h2 Cohesive Responsive Architecture for Preprocessors
+          nav.main-nav
+            - var x = 1;
+            +navigation('sss')
+            ul
+              li
+                a(href='#') Home
+              li
+                a(href='#') About
+              li
+                a(href='#') News
+              li
+                a(href='#') Contact
+      .site-main
+        .wrap
+          block content
+            p Hello this is content
+
+          div(style='clear:both; height: 200px;')
+      footer.site-footer
+        .wrap
+          p
+            small 2013 | Some rights reserved
+    script(src="//code.jquery.com/jquery-1.10.2.min.js")
+    script(src="_assets/js/plugins.js")
+    script(src="_assets/js/main.js")
