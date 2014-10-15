@@ -1,25 +1,15 @@
 // Whole-page layout styling
 
 html {
-  @include mq($to: tablet) {
-    background: #ffb1c2;
-  }
-  @include mq($from: tablet) {
-    background: #ffd9c3;
-  }
-  @include mq($from: desktop) {
-    background: #fffcc5;
-  }
-  @include mq($from: supersize) {
-    background: #D5FFEB;
-  }
+
 }
 
 .page {
 
 }
-.wrap {
+
+.container {
   margin: 0 auto;
-  width: 90%;
-  max-width: 960px;
+  padding: 0 10px;
+  max-width: 940px;
 }

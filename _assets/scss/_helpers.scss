@@ -1,0 +1,16 @@
+// OOCSSish helper classes
+
+.no-js .no-js-hide,
+.js .js-hide {
+  display: none;
+}
+
+
+// Hide element from screen but keep accessible for screenreaders
+@mixin unseen {
+
+}
+
+.visuallyhidden {
+  @include unseen;
+}
