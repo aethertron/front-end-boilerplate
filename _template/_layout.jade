@@ -1,48 +1,54 @@
 doctype html
 include ./_functions.jade
-| <!--[if gte IE 9]><!-->
-html(lang="en", class="no-js newer")
-  | <!--<![endif]--><!--[if lt IE 9]>
-html(lang="en", class="no-js legacy")
+<!--[if lte IE 8]>
+<html lang="en" class="legacy no-js">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+head
+  title Example HTML page
+  | 
+  | <!--[if gte IE 9]><!-->
+  link(rel='stylesheet', href='/_assets/css/style.css')
+  | <!--<![endif]-->
+  | <!--[if lt IE 9]>
+  link(rel='stylesheet', href='/_assets/css/style-legacy.css')
   | <![endif]-->
-  head
-    title Example HTML page
-    | 
-    | <!--[if gte IE 9]><!-->
-    link(rel='stylesheet', href='/_assets/css/style.css')
-    | <!--<![endif]-->
-    | <!--[if lt IE 9]>
-    link(rel='stylesheet', href='/_assets/css/style-legacy.css')
-    | <![endif]-->
-    //- http://www.paulirish.com/2009/avoiding-the-fouc-v3/
-    script (function () {var d=document.documentElement; d.className=d.className.replace(/\bno-js\b/,'js'); })();
-  body
-    .page
-      header.site-header
-        .container
-          .masthead
-            h1 Example HTML page
-            h2 Cohesive Responsive Architecture for Preprocessors
-          nav.main-nav
-            ul
-              li
-                a(href='#') Home
-              li
-                a(href='#') About
-              li
-                a(href='#') News
-              li
-                a(href='#') Contact
-      .site-main
-        .container
-          block content
-            p Hello this is content
+  //- http://www.paulirish.com/2009/avoiding-the-fouc-v3/
+  script.
+    (function () {var d=document.documentElement;
+    d.className=d.className.replace(/\bno-js\b/,'js');}());
+body
+  .page
+    header.site-header.dark
+      .container
+        .masthead
+          .logo
+            img(src="/_assets/img/lightstar.svg", alt="")
+          h1 Example HTML page
+          h2 Cohesive Responsive Architecture for Preprocessors
+        nav.main-nav
+          ul.nav
+            li
+              a(href='#') Home
+            li
+              a(href='#') About
+            li
+              a(href='#') News
+            li
+              a(href='#') Contact
+    .site-main
+      .container
+        block content
+          p Hello this is content
 
-          div(style='clear:both; height: 200px;')
-      footer.site-footer
-        .container
-          p
-            small 2013 | Some rights reserved
-    script(src="//code.jquery.com/jquery-1.10.2.min.js")
-    script(src="_assets/js/plugins.js")
-    script(src="_assets/js/main.js")
+        div(style='clear:both; height: 200px;')
+    footer.site-footer
+      .container
+        p
+          small 2013 | Some rights reserved
+  script(src="//code.jquery.com/jquery-1.10.2.min.js")
+  script(src="_assets/js/plugins.js")
+  script(src="_assets/js/main.js")
+</html>

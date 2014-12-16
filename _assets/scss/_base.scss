@@ -1,18 +1,24 @@
-// Default element styling
+// Improved universal element defaults
 
 html {
   font: 100%/1.4 calibri, sans-serif;
   color: #444;
   overflow-y: scroll;
 }
+
 img {
   vertical-align: middle;
   max-width: 100%;
 }
+
 a img {
   border: 0;
 }
 
-button, [type=submit], [type=radio], [type=checkbox] {
+button,
+[type=submit],
+[type=reset],
+[type=radio],
+[type=checkbox] {
   cursor: pointer;
 }

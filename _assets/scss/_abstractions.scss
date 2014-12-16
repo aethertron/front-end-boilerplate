@@ -1,0 +1,38 @@
+// Reusable submodular objects
+
+.no-js .no-js-hide,
+.js .js-hide {
+  display: none;
+}
+
+// Hide element from screen but keep accessible for screenreaders
+@mixin unseen {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+.unseen,
+%unseen {
+  @include unseen;
+}
+
+%clearfix,
+.clearfix {
+  @include clearfix;
+}
+
+.nav {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+    text-decoration: none;
+    display: inline;
+  }
+}

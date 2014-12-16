@@ -137,7 +137,6 @@ dfn {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -333,8 +332,6 @@ input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box;
 }
@@ -406,8 +403,58 @@ a img {
   border: 0;
 }
 
-button, [type=submit], [type=radio], [type=checkbox] {
+button,
+[type=submit],
+[type=reset],
+[type=radio],
+[type=checkbox] {
   cursor: pointer;
+}
+
+.dark {
+  background-color: #111;
+  color: #fff;
+}
+.dark a {
+  color: #fff;
+}
+
+.no-js .no-js-hide,
+.js .js-hide {
+  display: none;
+}
+
+.unseen {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+.nav {
+  margin: 0;
+  padding: 0;
+}
+.nav li {
+  list-style: none;
+  text-decoration: none;
+  display: inline;
 }
 
 .container {
