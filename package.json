@@ -1,0 +1,16 @@
+{
+  "name": "frontendboilerplate",
+  "version": "0.2.0",
+  "devDependencies": {
+    "jade": "latest",
+    "node-sass": "~1.2.3",
+    "watch": "latest",
+    "parallelshell": "latest"
+  },
+  "scripts": {
+    "build:jade": "jade -P index.jade pages/style-library.jade",
+    "build:css" : "node-sass _assets/scss/style.scss _assets/css/style.css && node-sass _assets/scss/style-legacy.scss _assets/css/style-legacy.css",
+    "build" : "npm run build:jade && npm run build:css",
+    "build:watch" : "watch 'npm run build:css' ."
+  }
+}
